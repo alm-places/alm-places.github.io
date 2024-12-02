@@ -114,11 +114,11 @@ function exportScene() {
   const exporter = new OBJExporter();
   const objString = exporter.parse(meshGroup);
 
-  const blob = new Blob([objString], { type: "text/plain" });
+  const blob = new Blob([objString], { type: "application/octet-stream" });
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
   link.download = "scene.obj";
   link.click();
-
+  
   console.log("Scene exported as OBJ");
 }
